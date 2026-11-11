@@ -1,0 +1,7 @@
+v 4
+file . "tb_detector_start_done.vhdl" "19ef19acae947116ff37057e7ce93c6de5cb991a" "20261111215730.429":
+  entity tb_detector_start_done at 1( 0) + 0 on 13;
+  architecture simulacao of tb_detector_start_done at 8( 124) + 0 on 14;
+file . "detector_start_done.vhdl" "2149b293b00d195515547994b84cd43b965fcb5b" "20261111215717.788":
+  entity detector_start_done at 1( 0) + 0 on 11;
+  architecture rtl of detector_start_done at 15( 396) + 0 on 12;
