@@ -28,7 +28,16 @@ architecture Simulacao of tb_detector_start_done is
     signal done   : STD_LOGIC;
 
     constant clk_period : time := 10 ns;
-    constant sequencia_teste : std_logic_vector(0 to 10) := "10110101101";
+    constant sequencia_teste : std_logic_vector(0 to 3) := "1011"; 
+    constant sequencia_teste_2 : std_logic_vector(0 to 5) := "101101";
+    constant sequencia_teste_3 : std_logic_vector(0 to 8) := "000101101";
+    constant sequencia_teste_4 : std_logic_vector(0 to 11) := "101100101101";
+    constant sequencia_teste_5 : std_logic_vector(0 to 10) := "10110101101";
+    constant sequencia_teste_6 : std_logic_vector(0 to 13) := "10110100101101";
+    constant sequencia_teste_7 : std_logic_vector(0 to 11) := "111010110111";
+    constant sequencia_teste_8 : std_logic_vector(0 to 15) := "1011010110101101";
+    constant sequencia_teste_9 : std_logic_vector(0 to 14) := "111000110100111";
+    constant sequencia_teste_10 : std_logic_vector(0 to 19) := "10101010101010101010";
 
 begin
 
