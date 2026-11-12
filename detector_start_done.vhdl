@@ -71,9 +71,9 @@ begin
             when S4 =>
                 if din = '0' then proximo_estado <= S5; else proximo_estado <= S1; end if;
             when S5 =>
-                -- com din = '1' achou a sequencia; os 3 ultimos bits (101)
-                -- ja contam como comeco de outra, por isso vai para S3
-                if din = '1' then proximo_estado <= S3; else proximo_estado <= S0; end if;
+                -- com din = '1' achou a sequencia: encerra a leitura agora,
+                -- sem esperar o fim do fluxo (o flag achou e gravado neste mesmo clock)
+                if din = '1' then proximo_estado <= RESULTADO; else proximo_estado <= S0; end if;
 
             when RESULTADO =>
                 -- o resultado ja esta no flag achou
