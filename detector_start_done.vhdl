@@ -5,11 +5,11 @@ entity detector_start_done is
     Port (
         clk    : in  STD_LOGIC;
         rst    : in  STD_LOGIC;
-        start  : in  STD_LOGIC;  -- inicia o algoritmo
-        din    : in  STD_LOGIC;  -- fluxo de entrada, 1 bit por clock
-        fim    : in  STD_LOGIC;  -- '1' junto com o ultimo bit do fluxo
-        detect : out STD_LOGIC;  -- '1' se a sequencia 101101 apareceu
-        done   : out STD_LOGIC   -- '1' quando terminou de processar o fluxo
+        start  : in  STD_LOGIC;  
+        din    : in  STD_LOGIC;  
+        fim    : in  STD_LOGIC; 
+        detect : out STD_LOGIC; 
+        done   : out STD_LOGIC  
     );
 end detector_start_done;
 
@@ -26,7 +26,7 @@ architecture RTL of detector_start_done is
 
 begin
 
-    -- Registradores: estado da FSM e flag achou
+    -- registradores: estado da FSM e flag achou
     process(clk, rst)
     begin
         if rst = '1' then

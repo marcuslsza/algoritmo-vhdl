@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity tb_detector_start_done is
--- Entidade vazia
+
 end tb_detector_start_done;
 
 architecture Simulacao of tb_detector_start_done is
@@ -29,16 +29,15 @@ architecture Simulacao of tb_detector_start_done is
 
     constant clk_period : time := 10 ns;
 
-    -- O DUT procura 101101 em qualquer parte do fluxo.
 
     -- Fluxos que contem 101101 (esperado: detect = '1')
     constant sequencia_teste_1  : std_logic_vector(0 to 5)  := "101101";
     constant sequencia_teste_2  : std_logic_vector(0 to 8)  := "000101101";
-    constant sequencia_teste_3  : std_logic_vector(0 to 11) := "101100101101";  -- 1a tentativa falha (101100)
-    constant sequencia_teste_4  : std_logic_vector(0 to 9)  := "1011101101";    -- 10111 volta para S1
-    constant sequencia_teste_5  : std_logic_vector(0 to 16) := "10110010100101101";  -- varias tentativas falhas
-    constant sequencia_teste_6  : std_logic_vector(0 to 11) := "111010110111";  -- sequencia no meio do fluxo
-    constant sequencia_teste_7  : std_logic_vector(0 to 6)  := "1101101";       -- 11 antes da sequencia
+    constant sequencia_teste_3  : std_logic_vector(0 to 11) := "101100101101";  
+    constant sequencia_teste_4  : std_logic_vector(0 to 9)  := "1011101101";    
+    constant sequencia_teste_5  : std_logic_vector(0 to 16) := "10110010100101101";
+    constant sequencia_teste_6  : std_logic_vector(0 to 11) := "111010110111";
+    constant sequencia_teste_7  : std_logic_vector(0 to 6)  := "1101101";
 
     -- Fluxos com cauda depois da 1a ocorrencia: o DUT deve encerrar a leitura
     -- assim que achar 101101 (done sobe antes do fim do fluxo)
@@ -64,7 +63,6 @@ begin
         done   => done
     );
 
-    -- Clock
     clk_process : process
     begin
         clk <= '0';
@@ -73,7 +71,6 @@ begin
         wait for clk_period/2;
     end process;
 
-    -- Estimulos
     stim_proc : process
 
         -- Roda um teste: manda o fluxo bit a bit e confere detect e done no final.
